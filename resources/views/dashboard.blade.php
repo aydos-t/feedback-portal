@@ -9,7 +9,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("Вы вошли в систему!") }}
+                    @if(auth()->user()->role->name == 'manager')
+
+                        <span class="text-blue-500 font-bold text-lg">Поступившие заявки</span>
+                        @include('users-dashboard.manager-dashboard')
+
+                    @else
+                        {{ __("Привет клиент") }}
+                    @endif
                 </div>
             </div>
         </div>
