@@ -15,7 +15,7 @@
                         @include('users-dashboard.manager-dashboard')
 
                     @else
-                        {{ __("Привет клиент") }}
+                        @include('users-dashboard.client-dashboard')
                     @endif
                 </div>
             </div>
